@@ -1,9 +1,30 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+
+
+import NavbarComponent from './Components/NavbarComponent'
+// pages
+import HomePage from './Pages/HomePage';
+import About from './Pages/About';
+import Services from './Pages/Services';
+import Pricing from "./Pages/Pricing";
+import Contract from "./Pages/Contract"
+
+
 
 const App = () => {
   return (
     <div>
-      <h1 className='text-3xl uppercase'>react router project</h1>
+      <NavbarComponent />
+      <Routes>
+        <Route path="" element={<HomePage />} />
+        <Route path="about/" element={<About />} />
+        <Route path="service/" element={<Services />} />
+        <Route path="pricing/" element={<Pricing />} />
+        <Route path="contract/" element={<Contract />} />
+      </Routes>
+
+
     </div>
   )
 }
